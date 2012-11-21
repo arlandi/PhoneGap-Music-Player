@@ -1,0 +1,65 @@
+h2{
+	text-align:center;
+	color:#060;
+}
+
+#slider{
+	display:none;
+}
+
+div.ui-slider{
+	margin:0;
+	width:100%;
+}
+
+#recording{
+	font-weight: bold;
+	color:#f00;
+}
+
+.ui-icon-audio-play {
+	background-image: url("../img/18/play.png");
+}
+
+.ui-icon-audio-pause {
+	background-image: url("../img/18/pause.png");
+}
+
+.ui-icon-audio-stop {
+	background-image: url("../img/18/stop.png");
+}
+
+.ui-icon-audio-rewind {
+	background-image: url("../img/18/rewind.png");
+}
+
+.ui-icon-audio-record {
+	background-image: url("../img/18/record.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-audio-play {
+		background-image: url("../img/36/play.png");
+		background-size: 18px 18px;
+	}
+	
+	.ui-icon-audio-pause {
+		background-image: url("../img/36/pause.png");
+		background-size: 18px 18px;
+	}
+	
+	.ui-icon-audio-stop {
+		background-image: url("../img/36/stop.png");
+		background-size: 18px 18px;
+	}
+	
+	.ui-icon-audio-rewind {
+		background-image: url("../img/36/rewind.png");
+		background-size: 18px 18px;
+	}
+	
+	.ui-icon-audio-record {
+		background-image: url("../img/36/record.png");
+		background-size: 18px 18px;
+	}
+}

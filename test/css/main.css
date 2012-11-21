@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 20px;
+}
+
+img {
+	max-width: 100%;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   background: #fff;
+   color: #a0a0a0;
+   font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #111111;
+	margin: 20px 0 5px;
+}
+
+pre {
+	font-size: 11px;
+	margin: 5px 0 20px;
+	padding: 10px;
+	background: #080808;
+	border: 1px solid #000;
+	color: #fff;
+}
+
+em {
+	font-style: italic;
+	font-weight: bold;	
+}
+
+#content div, #content p, #content ul, #content ol {
+	margin-bottom: 10px;	
+}
+
+input{
+	border: solid 1px #464646;
+	outline: 0;
+	font: normal 12px/100% Verdana, Tahoma, sans-serif;
+	display:block;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	background: #1a1a1a;
+	border: 0px;
+	color: #FFFFFF;
+	cursor:pointer;
+}
+
+#content {
+   width: 960px;
+   max-width: 100%;
+   margin: 0px auto 100px;
+   padding: 0px;
+   border: 1px solid #dcdcdc;
+   background: #f6f6f6; 
+}
+
+#inner-content {
+   padding: 20px; 
+}
+
+#inner-content ol, #inner-content ul {
+	list-style: circle;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+#inner-content a, #inner-content a:visited {
+   color: #0b95f7;
+   font-weight: bold;
+}
+
+#inner-content a:hover {
+   text-decoration: none;  
+}
+
+#column2 {
+	width: 100%;	
+}
+
+#column2 div {
+	width: 44%;
+	float: left;	
+}
+
+#column2 .first-col {
+	width: 53%;
+	margin-right: 1%;
+}
+
+#column2 .second-col {
+	width: 46%;
+}
+
+
+/* Helper */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.clear {clear: both;}

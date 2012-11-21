@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Music App</title>
+ 
+    
+
+    <!-- Jquery -->
+	  <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+
+    <!-- Knockout -->
+    <script src="js/knockout.js" type="text/javascript"></script>
+
+    <!-- Soundmanager -->
+    <script src="js/soundmanager2-nodebug-jsmin.js" type="text/javascript"></script>
+
+    <!-- Main Script -->
+    <script src="js/script.js" type="text/javascript"></script>
+
+        
+	<script type="text/javascript">
+
+  $(function() {
+
+  bsdapp = new bsdapp();
+  ko.applyBindings(bsdapp);
+	
+	//some soundmanager settings
+	soundManager.url = 'swf/';
+	soundManager.flashVersion = 9;
+	soundManager.useHTML5Audio = true;
+	soundManager.debugMode = false;
+
+  });
+   	 
+    </script>
+    
+    </head>
+    
+    <body>
+      
+      <div data-bind="click: play" id="play">Play</div>
+      <div data-bind="click: pause" id="pause">Pause</div>
+      <span id="current_time" data-bind="text: currenttime" >00:00</span> / <span data-bind="text: totaltime">00:00</span>
+
+      <div data-bind="click: addtrack">Play File</div>
+
+      <span>Status: <span ></span> </span>
+
+
+      
+    </body>
+</html>
