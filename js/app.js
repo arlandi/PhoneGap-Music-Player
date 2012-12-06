@@ -79,7 +79,7 @@ function bsdapp() {
     }
 
     self.gettracks = function(){
-        self.status('Fetching data from server...');
+        self.status("Fetching data from server...");
         $.ajax({
             url: "http://brainshutdown.com/api/tracks&20/"+self.tracksonpage().length,
             type: "GET",
@@ -87,7 +87,9 @@ function bsdapp() {
             success: function(allData) {
                 var mappedTasks = $.map(allData, function(item) { return new trackItem(item) });
                 ko.utils.arrayPushAll(self.tracksonpage, mappedTasks);
-                self.status('20 tracks pushed to Main Array');
+                self.status("20 songs mapped: http://brainshutdown.com/api/tracks&20/"+self.tracksonpage().length);
+                myScroll.refresh();
+                console.log('test');
             }
           });
     }
@@ -134,8 +136,9 @@ function bsdapp() {
           }
 
         last ? self.tracks.push(track) : self.tracks.splice(self.currindex()+1,0,track);
-        self.status('track id: '+track.id+' pushed to Queue Array. Autoplay: '+playIt);
+        self.status('track id: '+track.id+' pushed to Playlist. Autoplay: '+playIt);
         if(playIt) self.playtrack(track);
+        myScroll.refresh();
 
     }
 

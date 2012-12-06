@@ -12,8 +12,19 @@
   <script src="js/jquery.js"></script>
   <script src="js/knockout.js"></script>
   <script src="js/pager.js"></script>
+  <script src="js/iscroll.js"></script>
   <script src="js/soundmanager2-nodebug-jsmin.js" type="text/javascript"></script>
   <script src="js/app.js"></script>
+
+  <script type="text/javascript">
+  var myScroll;
+  function loaded() {
+    myScroll = new iScroll('wrapper');
+  }
+
+  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+  </script>
 
 
   </head>
@@ -24,7 +35,7 @@
           <a href="#!/latest" >Latest</a>
           <a href="#!/popular" >Popular</a>
           <a href="#!/player" >Player</a>
-          <a href="#!/queue" >Queue</a>
+          <a href="#!/queue" >Playlist</a>
         </nav>
     </div>
 
@@ -40,28 +51,30 @@
 
   <nav class="bar-tab footer-nav">
     <h3 class="title debug">Log: <span data-bind="text: status()"></span></h3>
-    <h3 class="title debug">Queue Size: <span data-bind="text: tracks().length"></span> | Current Index:  <span data-bind="text: currindex()"></span></h3>
+    <h3 class="title debug">Playlist Size: <span data-bind="text: tracks().length"></span> | Current Index:  <span data-bind="text: currindex()"></span></h3>
   </nav>
 
-  <div class="content">
+  <div id="wrapper" class="content">
 
   <div class="window" data-bind="page: {id: 'latest', afterShow: changepage}">
-
+    
     <ul class="list" data-bind="foreach: tracksonpage" >
       <li class="song-row">
         <a>
           <img data-bind="attr: { src: cover }" />
           <p data-bind="text: title" class="title"><p>
           <p data-bind="text: artist" ></p> 
-          <p><span data-bind="click: $parent.addtrack.bind($data, true,true)">Push + Play</span> / 
-            <span data-bind="click: $parent.addtrack.bind($data, false,true)">Push</span> / 
-            <span data-bind="click: $parent.addtrack.bind($data, false,false)">Insert</span></p>
+          <p>
+            <span data-bind="click: $parent.addtrack.bind($data, true,true)">Play</span> /
+            <span data-bind="click: $parent.addtrack.bind($data, false,false)">Play Next</span> / 
+            <span data-bind="click: $parent.addtrack.bind($data, false,true)">Play Last</span>
+          </p>
           <span class="chevron"></span>
         </a>
       </li>
     </ul>
 
-    <div class="hero"> <a class="button" data-bind="click: gettracks">Push 20 tracks</a></div>
+    <div class="hero"> <a class="button" data-bind="click: gettracks">Load 20 tracks</a></div>
 
   </div>
 
@@ -72,8 +85,8 @@
   <div class="window" data-bind="page: {id: 'queue', afterShow: changepage}">
 
   <div class="standard-bar">
-    <a data-bind="click: popqueue" class="button-block queue-menu">Pop</a>
-    <a data-bind="click: dequeue" class="button-block queue-menu queue-menu-last">Dequeue</a>
+    <a data-bind="click: popqueue" class="button-block queue-menu">Dequeue</a>
+    <a data-bind="click: dequeue" class="button-block queue-menu queue-menu-last">Pop</a>
   </div>
 
     <ul class="list queue" data-bind="foreach: tracks" >
@@ -92,7 +105,6 @@
       <div data-bind="click: pause" id="pause">Pause</div>
       <span id="current_time" data-bind="text: currenttime" >00:00</span> / <span data-bind="text: totaltime">00:00</span>
   </div>
-
   </div>
 
   <script>
